@@ -27,6 +27,26 @@ Or install by category:
 
 ---
 
+## 🔒 Security Notice
+
+All 50 skills have been assessed for security threats and vulnerabilities. Each skill includes a security grade:
+
+- **🟢 A (Minimal Risk)** - Safe for all environments, no significant security concerns
+- **🟡 B (Low Risk)** - Minor risks, safe with standard precautions
+- **🟠 C (Moderate Risk)** - Requires careful configuration and monitoring
+- **🔴 D (High Risk)** - Significant security considerations, enterprise review recommended
+
+**📋 [View Full Security Assessment](SECURITY_ASSESSMENT.md)** - Detailed threat analysis, mitigations, and best practices for each skill.
+
+### Key Security Recommendations
+- **API Keys**: Store credentials securely using environment variables or secret vaults
+- **High-Risk Skills**: Skills marked 🔴 require enterprise security review before production use
+- **Code Review**: Always review AI-generated code before deployment
+- **Monitoring**: Implement logging and monitoring for all skill usage
+- **Compliance**: Ensure compliance with GDPR, CCPA, and relevant regulations
+
+---
+
 ## 📚 Table of Contents
 
 1. [The Foundation (Agent Core)](#1-the-foundation-agent-core) - 6 skills
@@ -44,7 +64,9 @@ Or install by category:
 
 If your OpenClaw feels "mid," it's not the model. It's the plumbing. Stop treating AI like a chatbot and start treating it like an OS. You don't need a bloated setup. You just need these 6 foundational "Skills" to give your agent a brain that actually has hands.
 
-### find-skills (The Navigator)
+### find-skills (The Navigator) 🟡 B
+
+**Security Grade:** Low Risk - Network dependency for skill discovery. Use trusted repositories only.
 
 **What it does:** There are 200k+ skills out there! Don't waste time searching manually. This is the most installed skill for a reason: it lets your AI hunt down the exact tool it needs for any niche task.
 
@@ -73,7 +95,9 @@ claw ask "Show me alternatives to the docx skill"
 
 ---
 
-### skill-creator (The Factory)
+### skill-creator (The Factory) 🟠 C
+
+**Security Grade:** Moderate Risk - Code generation without security validation. Always review generated code and run security scans.
 
 **What it does:** This is how you scale "you". It takes your unique workflows and "Vibe Coding" logic and wraps them into reusable capabilities the AI can execute on repeat.
 
@@ -102,7 +126,9 @@ claw ask "Create a skill that validates medical data according to HIPAA requirem
 
 ---
 
-### mcp-builder (The Bridge)
+### mcp-builder (The Bridge) 🔴 D
+
+**Security Grade:** High Risk - Direct access to private databases and APIs. Store credentials securely, use environment variables, implement least-privilege access.
 
 **What it does:** The MVP for 2026. It builds the servers that connect your AI to your private data and external tools via the Model Context Protocol. No bridge, no power.
 
@@ -135,7 +161,9 @@ claw ask "Set up an MCP bridge to my S3 bucket for document processing"
 
 ---
 
-### using-superpowers (The Optimizer)
+### using-superpowers (The Optimizer) 🟡 B
+
+**Security Grade:** Low Risk - Capability enumeration. Implement capability-based security and principle of least privilege.
 
 **What it does:** Most people let the AI guess. This skill forces the agent to actually understand and maximize its high-level capabilities instead of just "winging it".
 
@@ -164,7 +192,9 @@ claw ask "Optimize my agent for processing large datasets efficiently"
 
 ---
 
-### subagent-driven-development (The Manager)
+### subagent-driven-development (The Manager) 🟠 C
+
+**Security Grade:** Moderate Risk - Sub-agent privilege escalation. Implement sub-agent sandboxing and code review all outputs.
 
 **What it does:** Stop trying to do everything in one prompt. This lets your AI delegate, assigning sub-tasks to other AIs and auditing their work so you can focus on the vision, not the grind.
 
@@ -193,7 +223,9 @@ claw ask "Split this codebase refactoring across 3 agents working in parallel"
 
 ---
 
-### agent-tools (The Toolkit)
+### agent-tools (The Toolkit) 🟢 A
+
+**Security Grade:** Minimal Risk - File system access. Restrict scope and validate file paths.
 
 **What it does:** This is the digital Swiss Army knife. It equips your agent with a collection of practical utilities for everyday labor that standard models simply can't handle out of the box.
 
@@ -230,7 +262,9 @@ claw ask "What utilities are available in agent-tools for data processing?"
 
 If your agent's output feels like robotic "filler," it's because it's missing a dedicated reflection loop. These skills turn your OpenClaw from a fast typist into a strategic partner that can stress-test its own logic before you ever see the first draft.
 
-### brainstorming (The Ideator)
+### brainstorming (The Ideator) 🟢 A
+
+**Security Grade:** Minimal Risk - Ideation tool. Review generated ideas before implementation.
 
 **What it does:** Don't settle for the first "AI-sounding" idea. This generates dozens of unique angles and "what-if" scenarios from a single keyword, giving you a massive creative head start.
 
@@ -259,7 +293,9 @@ claw ask "Give me 50 blog post ideas about sustainable technology"
 
 ---
 
-### copywriting (The Wordsmith)
+### copywriting (The Wordsmith) 🟢 A
+
+**Security Grade:** Minimal Risk - Content generation. Human oversight for all public content.
 
 **What it does:** This isn't just a text generator; it's an all-around player for structure and flow. It optimizes expression and refines tone without relying on those tired, "one-click" generic templates.
 
@@ -288,7 +324,9 @@ claw ask "Rewrite this technical content for a non-technical audience"
 
 ---
 
-### systematic-debugging (The Auditor)
+### systematic-debugging (The Auditor) 🟢 A
+
+**Security Grade:** Minimal Risk - Debugging tool. Sanitize debug outputs, avoid logging sensitive data.
 
 **What it does:** Not just for code. Use this framework to troubleshoot project plans or perform deep-dive analysis when things aren't clicking.
 
@@ -317,7 +355,9 @@ claw ask "Perform a deep-dive analysis of why our last product launch underperfo
 
 ---
 
-### writing-plans (The Architect)
+### writing-plans (The Architect) 🟢 A
+
+**Security Grade:** Minimal Risk - Planning tool. Protect strategic plans appropriately.
 
 **What it does:** Pro-level agents never start with a blank page. This forces the agent to build a structural outline and content strategy first, ensuring your "long-read" stays on track.
 
@@ -346,7 +386,9 @@ claw ask "Design a content structure for a 12-part email course on marketing"
 
 ---
 
-### content-strategy (The Planner)
+### content-strategy (The Planner) 🟢 A
+
+**Security Grade:** Minimal Risk - Strategy tool. Protect competitive intelligence.
 
 **What it does:** Moves you from "posting for the sake of it" to actual planning. It helps you pick topics and map out a content calendar that actually makes sense for your brand.
 
@@ -375,7 +417,9 @@ claw ask "Design a content funnel that takes users from awareness to purchase"
 
 ---
 
-### executing-plans (The Closer)
+### executing-plans (The Closer) 🟡 B
+
+**Security Grade:** Low Risk - Automated execution. Implement approval workflows for critical tasks.
 
 **What it does:** This turns "vague ideas" into "delivered assets." It breaks your high-level plans into actionable, multi-step tasks that the AI handles autonomously.
 
@@ -404,7 +448,9 @@ claw ask "Execute this marketing campaign plan across all channels"
 
 ---
 
-### marketing-ideas (The Creative Director)
+### marketing-ideas (The Creative Director) 🟢 A
+
+**Security Grade:** Minimal Risk - Ideation tool. Legal review for claims and campaigns.
 
 **What it does:** Throw it a feature or a launch date, and it uses high-level marketing frameworks to generate viral hooks and campaign concepts that go way beyond "buy my product."
 
@@ -433,7 +479,9 @@ claw ask "Give me 20 attention-grabbing hooks for promoting a productivity app"
 
 ---
 
-### copy-editing (The Senior Editor)
+### copy-editing (The Senior Editor) 🟢 A
+
+**Security Grade:** Minimal Risk - Editing tool. Preserve original intent and accuracy.
 
 **What it does:** Think of this as your "Senior Editor." It doesn't just check for typos; it polishes the tone, tightens the flow, and ensures your unique voice (the "human" element) isn't lost in the AI generation.
 
@@ -462,7 +510,9 @@ claw ask "Tighten up this landing page copy to be more concise and impactful"
 
 ---
 
-### social-content (The Manager)
+### social-content (The Manager) 🟡 B
+
+**Security Grade:** Low Risk - Social automation. Human review before posting, respect platform terms of service.
 
 **What it does:** Specialized for 2026 platforms (X, TikTok, Rednote). It takes your core ideas and automatically reformats them into platform-specific hooks designed to stop the scroll.
 
@@ -491,7 +541,9 @@ claw ask "Adapt this technical guide into bite-sized social posts for each platf
 
 ---
 
-### reflection (The Secret Sauce)
+### reflection (The Secret Sauce) 🟢 A
+
+**Security Grade:** Minimal Risk - Self-review tool. Use as supplement to human review.
 
 **What it does:** This adds a self-correction loop where the agent reviews its own work, summarizes lessons, and fixes mistakes mid-process.
 
@@ -528,7 +580,9 @@ claw ask "Analyze your last 5 outputs and identify patterns to improve"
 
 Vibe Coding is the standard for 2026, but "vibes" alone won't ship a production-grade app. These skills inject elite engineering experience and best practices into your agent, allowing you to build complex products with the speed of a solo founder and the quality of a full dev team.
 
-### vercel-react-best-practices (The Lead Dev)
+### vercel-react-best-practices (The Lead Dev) 🟡 B
+
+**Security Grade:** Low Risk - React code generation. Use security linting, implement CSP headers, regular dependency updates.
 
 **What it does:** The gold standard for front-end development. It ensures your React code is performant, scalable, and follows the latest patterns from the Vercel ecosystem.
 
@@ -561,7 +615,9 @@ claw ask "Review this code and apply performance optimizations"
 
 ---
 
-### vercel-composition-patterns (The Architect)
+### vercel-composition-patterns (The Architect) 🟡 B
+
+**Security Grade:** Low Risk - Component generation. Validate all component inputs, use TypeScript for type safety.
 
 **What it does:** A companion to React best practices. This skill focuses on advanced component composition, making your UI modular, reusable, and easy to maintain.
 
@@ -590,7 +646,9 @@ claw ask "Refactor this monolithic component into composable pieces"
 
 ---
 
-### remotion-best-practices (The Video Engineer)
+### remotion-best-practices (The Video Engineer) 🟡 B
+
+**Security Grade:** Low Risk - Video generation. Monitor resource usage, validate inputs, use approved templates only.
 
 **What it does:** Essential for programmatic video. It uses code-driven animation to automate your marketing assets and product demos.
 
@@ -623,7 +681,9 @@ claw ask "Set up a system to generate personalized videos for each customer"
 
 ---
 
-### agent-browser (The Explorer)
+### agent-browser (The Explorer) 🔴 D
+
+**Security Grade:** High Risk - Web automation. Respect robots.txt, use only on authorized sites, legal compliance required. May violate CFAA and website terms of service.
 
 **What it does:** Gives your AI "eyes" and "hands" to navigate the web, fill forms, scrape data, and perform automated testing.
 
@@ -654,7 +714,9 @@ claw ask "Test the checkout flow on our website and report any issues"
 
 ---
 
-### browser-use (The Operator)
+### browser-use (The Operator) 🔴 D
+
+**Security Grade:** High Risk - Browser automation. Use only on authorized systems, implement audit logging, secure session management required.
 
 **What it does:** A specialized automation skill that lets the AI "see" and "operate" web pages in real-time—a must-have for autonomous web agents.
 
@@ -683,7 +745,9 @@ claw ask "Verify that all images on this page load correctly"
 
 ---
 
-### vercel-react-native-skills (The Mobile Lead)
+### vercel-react-native-skills (The Mobile Lead) 🟡 B
+
+**Security Grade:** Low Risk - Mobile development. Follow OWASP Mobile Top 10, secure data storage, certificate pinning.
 
 **What it does:** The go-to for cross-platform apps. It applies React Native best practices so your mobile performance doesn't lag behind your web app.
 
@@ -716,7 +780,9 @@ claw ask "Optimize this React Native app for 60fps performance"
 
 ---
 
-### supabase-postgres-best-practices (The DBA)
+### supabase-postgres-best-practices (The DBA) 🟠 C
+
+**Security Grade:** Moderate Risk - Database access. Use parameterized queries only, enable RLS, regular security audits.
 
 **What it does:** Your backend specialist. It handles schema design and PostgreSQL optimization, ensuring your data layer is rock solid.
 
@@ -749,7 +815,9 @@ claw ask "Set up row-level security policies for this multi-tenant app"
 
 ---
 
-### next-best-practices (The Full-Stack Pro)
+### next-best-practices (The Full-Stack Pro) 🟡 B
+
+**Security Grade:** Low Risk - Next.js development. Secure API routes, environment variable management, security headers.
 
 **What it does:** Injects the latest Next.js architecture patterns into your agent, from Server Components to optimized routing.
 
@@ -782,7 +850,9 @@ claw ask "Set up this feature using Server Actions and streaming"
 
 ---
 
-### webapp-testing (The Bug Hunter)
+### webapp-testing (The Bug Hunter) 🟡 B
+
+**Security Grade:** Low Risk - Testing tool. Separate test environments, never test in production.
 
 **What it does:** Automatically runs test suites, finds edge cases, and hunts down bugs across your web applications.
 
@@ -811,7 +881,9 @@ claw ask "Test this feature thoroughly and report any bugs"
 
 ---
 
-### test-driven-development (The QA)
+### test-driven-development (The QA) 🟢 A
+
+**Security Grade:** Minimal Risk - Testing methodology. Include security tests in TDD approach.
 
 **What it does:** Quality is non-negotiable. This skill forces the AI to write tests before the code, ensuring every feature is durable.
 
@@ -840,7 +912,9 @@ claw ask "Ensure this module has 100% test coverage using TDD"
 
 ---
 
-### requesting-code-review (The Auditor)
+### requesting-code-review (The Auditor) 🟢 A
+
+**Security Grade:** Minimal Risk - Review tool. Combine automated and manual review, use trusted tools only.
 
 **What it does:** Never ship blind. This skill lets your agent review its own code to find security holes and potential bugs before production.
 
@@ -877,7 +951,9 @@ claw ask "Review this PR and suggest improvements"
 
 You don't need to be a designer to have pro-level aesthetics. These skills inject elite design theory directly into your agent, allowing you to generate everything from pixel-perfect UI components to high-fidelity marketing assets without ever touching Figma or Photoshop.
 
-### web-design-guidelines (The Architect)
+### web-design-guidelines (The Architect) 🟢 A
+
+**Security Grade:** Minimal Risk - Design guidance. Ensure accessibility compliance.
 
 **What it does:** Audits your frontend code against professional design principles like the 8px grid and neutral color palettes to ensure modern, consistent interfaces.
 
@@ -906,7 +982,9 @@ claw ask "Review this UI for design consistency issues"
 
 ---
 
-### frontend-design (The Artisan)
+### frontend-design (The Artisan) 🟢 A
+
+**Security Grade:** Minimal Risk - Design tool. Review designs for accessibility and usability.
 
 **What it does:** Focuses on creating distinctive, production-grade web interfaces that avoid the "generic AI look" by applying bold aesthetics and refined implementation.
 
@@ -935,7 +1013,9 @@ claw ask "Build a polished, production-ready dashboard interface"
 
 ---
 
-### ui-ux-pro-max (The Logic)
+### ui-ux-pro-max (The Logic) 🟢 A
+
+**Security Grade:** Minimal Risk - Design system. Regular accessibility audits, WCAG compliance.
 
 **What it does:** Provides professional design intelligence across nine major tech stacks, using automated reasoning to generate accessible design systems in seconds.
 
@@ -964,7 +1044,9 @@ claw ask "Explain the UX decisions for this checkout flow"
 
 ---
 
-### canvas-design (The Illustrator)
+### canvas-design (The Illustrator) 🟢 A
+
+**Security Grade:** Minimal Risk - Design generation. Review assets for brand compliance.
 
 **What it does:** Generates sophisticated visual art and posters by expressing original design philosophies as meticulously crafted PNG or PDF assets.
 
@@ -993,7 +1075,9 @@ claw ask "Design custom illustrations for our landing page"
 
 ---
 
-### tailwind-design-system (The System Builder)
+### tailwind-design-system (The System Builder) 🟢 A
+
+**Security Grade:** Minimal Risk - CSS framework. Regular design token audits.
 
 **What it does:** Architects scalable, production-ready UI libraries using Tailwind CSS tokens and accessible component patterns.
 
@@ -1025,7 +1109,9 @@ claw ask "Set up a Tailwind config with our brand colors and spacing scale"
 
 ---
 
-### content-visualizer (The Brand Manager)
+### content-visualizer (The Brand Manager) 🟡 B
+
+**Security Grade:** Low Risk - Image generation. Copyright compliance, brand guideline validation.
 
 **What it does:** Analyzes your articles or posts to recommend and generate the perfect cover image, matching the mood and palette of your brand.
 
@@ -1054,7 +1140,9 @@ claw ask "Design featured images for these 10 articles"
 
 ---
 
-### infographic-pro (The Data Visualizer)
+### infographic-pro (The Data Visualizer) 🟢 A
+
+**Security Grade:** Minimal Risk - Data visualization. Validate data accuracy, clear source attribution.
 
 **What it does:** Turns complex data into professional infographics, recommending the best layout (like pyramids or mind-maps) for your specific information.
 
@@ -1083,7 +1171,9 @@ claw ask "Create a pyramid infographic showing our customer funnel"
 
 ---
 
-### ai-image-generation (The Creative Hub)
+### ai-image-generation (The Creative Hub) 🟠 C
+
+**Security Grade:** Moderate Risk - AI image generation. Secure API key storage, content moderation, usage monitoring required.
 
 **What it does:** A unified entry point that auto-detects and uses the best models (DALL-E, Imagen, Gemini) for rapid prototyping and creative asset production.
 
@@ -1122,7 +1212,9 @@ claw ask "Generate this image using the best available AI model"
 
 Product is only half the battle. If you can't sell it, it doesn't exist. These skills turn your OpenClaw into a growth engine that handles everything from technical SEO to the psychological triggers that actually drive conversions.
 
-### Larry (The TikTok Viralist)
+### Larry (The TikTok Viralist) 🟠 C
+
+**Security Grade:** Moderate Risk - TikTok automation. Secure API keys, content approval workflows, may violate platform terms of service.
 
 **What it does:** This is the secret weapon for 2026. It completely automates your TikTok photo-mode content by pairing OpenAI Image 3.5 with viral marketing hooks. It handles the generation, the aesthetic, and the strategy so you can dominate the FYP while you sleep.
 
@@ -1155,7 +1247,9 @@ claw ask "Build a TikTok content calendar with viral hooks and visuals"
 
 ---
 
-### audit-website (The Consultant)
+### audit-website (The Consultant) 🟡 B
+
+**Security Grade:** Low Risk - Website auditing. Use only on owned properties, secure audit reports.
 
 **What it does:** Performs a full "health check" on your site, identifying technical friction points and telling you exactly what to fix to improve the user experience.
 
@@ -1184,7 +1278,9 @@ claw ask "Check my site for performance and accessibility issues"
 
 ---
 
-### seo-audit (The Ranker)
+### seo-audit (The Ranker) 🟡 B
+
+**Security Grade:** Low Risk - SEO analysis. Protect audit reports, confidential handling.
 
 **What it does:** Stop guessing why you aren't on page one. This scans your content for SEO gaps, helping you outrank competitors without spending hours in manual research.
 
@@ -1213,7 +1309,9 @@ claw ask "What SEO improvements would help this article rank higher?"
 
 ---
 
-### marketing-psychology (The Strategist)
+### marketing-psychology (The Strategist) 🟢 A
+
+**Security Grade:** Minimal Risk - Marketing strategy. Follow ethical marketing guidelines, transparent practices.
 
 **What it does:** Applies proven psychological principles (like social proof and scarcity) to your product hooks. It's science, not guesswork.
 
@@ -1242,7 +1340,9 @@ claw ask "Design a checkout flow using psychology principles"
 
 ---
 
-### programmatic-seo (The Multiplier)
+### programmatic-seo (The Multiplier) 🟠 C
+
+**Security Grade:** Moderate Risk - Large-scale content generation. High-quality standards required, risk of search engine penalties.
 
 **What it does:** The ultimate leverage tool for 2026. It helps you build systems that generate thousands of high-quality, SEO-optimized pages at scale.
 
@@ -1271,7 +1371,9 @@ claw ask "Set up programmatic SEO for our directory site"
 
 ---
 
-### product-marketing-context (The Positioning Expert)
+### product-marketing-context (The Positioning Expert) 🟢 A
+
+**Security Grade:** Minimal Risk - Strategy tool. Protect competitive intelligence and strategic documents.
 
 **What it does:** Helps you articulate your product's "Why." It maps out your unique selling points and identifies the exact pain points your customers are feeling.
 
@@ -1300,7 +1402,9 @@ claw ask "Map out the key pain points our product solves"
 
 ---
 
-### pricing-strategy (The Monetizer)
+### pricing-strategy (The Monetizer) 🟢 A
+
+**Security Grade:** Minimal Risk - Pricing analysis. Legal compliance for pricing, fair practices.
 
 **What it does:** Analyzes your market and product value to help you design a pricing model that maximizes revenue without scaring off users.
 
@@ -1329,7 +1433,9 @@ claw ask "Model different pricing scenarios and their revenue impact"
 
 ---
 
-### page-cro (The Optimizer)
+### page-cro (The Optimizer) 🟡 B
+
+**Security Grade:** Low Risk - Conversion optimization. Privacy-compliant tracking, GDPR/CCPA compliance.
 
 **What it does:** Focuses strictly on Conversion Rate Optimization. It looks at your landing pages and suggests tweaks to turn more visitors into paying customers.
 
@@ -1366,7 +1472,9 @@ claw ask "Analyze why our checkout has a 70% drop-off rate"
 
 The "grind" of documentation and administrative work is where most founders lose their momentum. These skills handle the heavy lifting of professional output, turning your AI into an elite executive assistant that can ship any file format in seconds.
 
-### pdf-pro (The Document Specialist)
+### pdf-pro (The Document Specialist) 🟡 B
+
+**Security Grade:** Low Risk - PDF processing. PDF sanitization, metadata removal, virus scanning.
 
 **What it does:** Need to merge, split, or extract content from complex PDFs? This handles the "paperwork" of digital labor without the manual headache.
 
@@ -1395,7 +1503,9 @@ claw ask "Split this 100-page PDF into separate chapters"
 
 ---
 
-### pptx (The Presenter)
+### pptx (The Presenter) 🟢 A
+
+**Security Grade:** Minimal Risk - Presentation generation. Disable macros, metadata sanitization.
 
 **What it does:** Generates full, professional slide decks for your next meeting or pitch. No more spending hours moving text boxes around.
 
@@ -1424,7 +1534,9 @@ claw ask "Build a slide deck explaining our product to new customers"
 
 ---
 
-### docx (The Scribe)
+### docx (The Scribe) 🟢 A
+
+**Security Grade:** Minimal Risk - Document generation. Disable macros, clear track changes before sharing.
 
 **What it does:** Creates structured, formatted Word documents—not just raw text—ready for official use or team collaboration.
 
@@ -1453,7 +1565,9 @@ claw ask "Write technical documentation in a Word document"
 
 ---
 
-### xlsx (The Data Analyst)
+### xlsx (The Data Analyst) 🟡 B
+
+**Security Grade:** Low Risk - Spreadsheet generation. Formula validation, disable macros, sanitize before sharing.
 
 **What it does:** Your spreadsheet wizard. It generates Excel files complete with complex formulas and charts, making data reporting effortless.
 
@@ -1482,7 +1596,9 @@ claw ask "Build a spreadsheet to track our KPIs with automated calculations"
 
 ---
 
-### url-to-markdown (The Researcher)
+### url-to-markdown (The Researcher) 🟡 B
+
+**Security Grade:** Low Risk - Content extraction. URL validation, content sanitization, respect robots.txt.
 
 **What it does:** A must-have for building a knowledge base. It cleans and converts any webpage into clean Markdown format for easy reading or AI processing.
 
@@ -1511,7 +1627,9 @@ claw ask "Convert our competitor's documentation to Markdown for analysis"
 
 ---
 
-### markdown-to-html (The Publisher)
+### markdown-to-html (The Publisher) 🟡 B
+
+**Security Grade:** Low Risk - HTML generation. Sanitize HTML output, use secure parsers, implement CSP.
 
 **What it does:** The final step in the publishing chain. It turns your clean notes and drafts into web-ready HTML for newsletters or blogs.
 
@@ -1540,7 +1658,9 @@ claw ask "Convert our documentation to HTML for the website"
 
 ---
 
-### format-pro (The Stylist)
+### format-pro (The Stylist) 🟢 A
+
+**Security Grade:** Minimal Risk - Formatting tool. Preserve document integrity.
 
 **What it does:** Standardizes your document layouts and styles, ensuring everything your brand puts out looks professional and uniform.
 
@@ -1651,15 +1771,26 @@ echo 'export OPENAI_API_KEY="your-key-here"' >> ~/.bashrc
 
 ## 📊 Skill Summary
 
-| Category | Skills | Total |
-|----------|--------|-------|
-| Foundation (Agent Core) | find-skills, skill-creator, mcp-builder, using-superpowers, subagent-driven-development, agent-tools | 6 |
-| Logic & Creative Stack | brainstorming, copywriting, systematic-debugging, writing-plans, content-strategy, executing-plans, marketing-ideas, copy-editing, social-content, reflection | 10 |
-| Programming & Product | vercel-react-best-practices, vercel-composition-patterns, remotion-best-practices, agent-browser, browser-use, vercel-react-native-skills, supabase-postgres-best-practices, next-best-practices, webapp-testing, test-driven-development, requesting-code-review | 11 |
-| Design & Visuals | web-design-guidelines, frontend-design, ui-ux-pro-max, canvas-design, tailwind-design-system, content-visualizer, infographic-pro, ai-image-generation | 8 |
-| Marketing & Growth | Larry, audit-website, seo-audit, marketing-psychology, programmatic-seo, product-marketing-context, pricing-strategy, page-cro | 8 |
-| Office Productivity | pdf-pro, pptx, docx, xlsx, url-to-markdown, markdown-to-html, format-pro | 7 |
-| **TOTAL** | | **50** |
+| Category | Skills | Total | Security Profile |
+|----------|--------|-------|------------------|
+| Foundation (Agent Core) | find-skills, skill-creator, mcp-builder, using-superpowers, subagent-driven-development, agent-tools | 6 | 🟢×1 🟡×2 🟠×2 🔴×1 |
+| Logic & Creative Stack | brainstorming, copywriting, systematic-debugging, writing-plans, content-strategy, executing-plans, marketing-ideas, copy-editing, social-content, reflection | 10 | 🟢×8 🟡×2 |
+| Programming & Product | vercel-react-best-practices, vercel-composition-patterns, remotion-best-practices, agent-browser, browser-use, vercel-react-native-skills, supabase-postgres-best-practices, next-best-practices, webapp-testing, test-driven-development, requesting-code-review | 11 | 🟢×2 🟡×6 🟠×1 🔴×2 |
+| Design & Visuals | web-design-guidelines, frontend-design, ui-ux-pro-max, canvas-design, tailwind-design-system, content-visualizer, infographic-pro, ai-image-generation | 8 | 🟢×6 🟡×1 🟠×1 |
+| Marketing & Growth | Larry, audit-website, seo-audit, marketing-psychology, programmatic-seo, product-marketing-context, pricing-strategy, page-cro | 8 | 🟢×3 🟡×3 🟠×2 |
+| Office Productivity | pdf-pro, pptx, docx, xlsx, url-to-markdown, markdown-to-html, format-pro | 7 | 🟢×3 🟡×4 |
+| **TOTAL** | | **50** | **🟢×24 🟡×17 🟠×6 🔴×3** |
+
+### Security Risk Distribution
+- **🟢 Minimal Risk (A)**: 24 skills (48%) - Safe for all environments
+- **🟡 Low Risk (B)**: 17 skills (34%) - Safe with standard precautions
+- **🟠 Moderate Risk (C)**: 6 skills (12%) - Requires careful configuration
+- **🔴 High Risk (D)**: 3 skills (6%) - Enterprise security review recommended
+
+**High-Risk Skills:** mcp-builder, agent-browser, browser-use  
+**Moderate-Risk Skills:** skill-creator, subagent-driven-development, supabase-postgres-best-practices, ai-image-generation, Larry, programmatic-seo
+
+📋 **[View Full Security Assessment](SECURITY_ASSESSMENT.md)** for detailed threat analysis and mitigation strategies.
 
 ---
 
@@ -1704,15 +1835,94 @@ This documentation is provided as-is for the OpenClaw community.
 
 ---
 
+## 🔒 Security & Best Practices
+
+### Security Assessment
+All 50 OpenClaw skills have been comprehensively evaluated for security threats, vulnerabilities, and risks. View the complete security assessment:
+
+📋 **[SECURITY_ASSESSMENT.md](SECURITY_ASSESSMENT.md)** - Detailed threat analysis, risk grades, mitigations, and best practices for each skill.
+
+### Security Highlights
+
+#### High-Risk Skills (Require Enterprise Review) 🔴
+1. **mcp-builder** - Database and API access, credential management
+2. **agent-browser** - Web automation, potential CFAA violations
+3. **browser-use** - Browser automation, session management risks
+
+#### Moderate-Risk Skills (Require Configuration) 🟠
+1. **skill-creator** - Code generation without validation
+2. **subagent-driven-development** - Sub-agent privilege escalation
+3. **supabase-postgres-best-practices** - Database security
+4. **ai-image-generation** - API key exposure, content moderation
+5. **Larry** - Platform automation, terms of service compliance
+6. **programmatic-seo** - Search engine penalty risks
+
+### Essential Security Practices
+
+#### 1. Credential Management
+- **Never** hardcode API keys or credentials
+- Use environment variables or secret management tools (AWS Secrets Manager, HashiCorp Vault)
+- Rotate credentials regularly
+- Implement least-privilege access
+
+#### 2. Code Review Process
+- **Always** review AI-generated code before deployment
+- Use static analysis and security linting tools
+- Implement mandatory peer review for production code
+- Test in isolated environments first
+
+#### 3. Monitoring & Logging
+- Enable comprehensive logging for all skill usage
+- Implement alerting for suspicious activities
+- Regular security audits and penetration testing
+- Maintain incident response procedures
+
+#### 4. Compliance Requirements
+- **GDPR** - Skills processing personal data
+- **CCPA** - California residents' data
+- **HIPAA** - Healthcare-related applications
+- **SOC 2** - Enterprise deployments
+- **Platform ToS** - Automation must respect terms of service
+
+#### 5. Network Security
+- Restrict external network access where possible
+- Use VPNs and private networks for sensitive connections
+- Implement rate limiting and throttling
+- Enable TLS/SSL for all network communications
+
+#### 6. High-Risk Skill Guidelines
+- Conduct security review before production deployment
+- Implement additional monitoring and alerting
+- Consider penetration testing
+- Document security controls and procedures
+- Establish incident response plans
+
+### Security Resources
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+- [OWASP AI Security](https://owasp.org/www-project-ai-security-and-privacy-guide/)
+- [Model Context Protocol Security](https://modelcontextprotocol.io/security)
+- [STRIDE Threat Modeling](https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats)
+
+### Reporting Security Issues
+If you discover a security vulnerability in any OpenClaw skill:
+1. **Do not** open a public issue
+2. Email security concerns to: security@openclaw.dev
+3. Include detailed information about the vulnerability
+4. Allow 90 days for remediation before public disclosure
+
+---
+
 ## 🔗 Resources
 
 - [OpenClaw Official Documentation](https://openclaw.dev/docs)
 - [OpenClaw Community Forum](https://community.openclaw.dev)
 - [Skill Marketplace](https://skills.openclaw.dev)
 - [Model Context Protocol](https://modelcontextprotocol.io)
+- [Security Assessment](SECURITY_ASSESSMENT.md) 🔒
 
 ---
 
-**Last Updated:** 2026-02-23
-**Total Skills Documented:** 50
+**Last Updated:** 2026-02-23  
+**Total Skills Documented:** 50  
+**Security Assessment:** Complete - All 50 skills graded  
 **Installation Script Version:** 1.0.0
