@@ -3,7 +3,7 @@
 ################################################################################
 # OpenClaw Skills - Comprehensive Installation Script
 # Version: 1.0.0
-# Description: Installs all 57 trusted OpenClaw skills or specific categories
+# Description: Installs all 50 trusted OpenClaw skills or specific categories
 ################################################################################
 
 set -e  # Exit on error
@@ -308,7 +308,7 @@ main() {
     # Install based on category selection
     if [ -z "$SELECTED_CATEGORY" ]; then
         # Install all skills
-        echo -e "${YELLOW}Installing all 57 OpenClaw skills...${NC}"
+        echo -e "${YELLOW}Installing all 50 OpenClaw skills...${NC}"
         echo ""
         
         install_category "foundation" "FOUNDATION_SKILLS" "The Foundation (Agent Core)"
@@ -318,7 +318,7 @@ main() {
         install_category "marketing" "MARKETING_SKILLS" "Marketing & Growth"
         install_category "productivity" "PRODUCTIVITY_SKILLS" "Office Productivity"
         
-        total_skills=57
+        total_skills=50
     else
         # Install specific category
         case $SELECTED_CATEGORY in

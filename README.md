@@ -1,6 +1,6 @@
 # claw-skills
 
-A comprehensive guide to the most trusted OpenClaw skills for 2026. This repository documents all 57 essential skills across 6 categories and provides an automated installation script to set up your complete OpenClaw system in one command.
+A comprehensive guide to the most trusted OpenClaw skills for 2026. This repository documents all 50 essential skills across 6 categories and provides an automated installation script to set up your complete OpenClaw system in one command.
 
 ## 🚀 Quick Start
 
@@ -31,12 +31,12 @@ Or install by category:
 
 1. [The Foundation (Agent Core)](#1-the-foundation-agent-core) - 6 skills
 2. [The Logic & Creative Stack](#2-the-logic--creative-stack) - 10 skills
-3. [Programming & Product Building](#3-programming--product-building) - 12 skills
+3. [Programming & Product Building](#3-programming--product-building) - 11 skills
 4. [Design & Visuals](#4-design--visuals) - 8 skills
 5. [Marketing & Growth](#5-marketing--growth) - 8 skills
 6. [Office Productivity](#6-office-productivity) - 7 skills
 
-**Total: 57 Skills**
+**Total: 50 Skills**
 
 ---
 
@@ -1583,7 +1583,7 @@ chmod +x install-all-skills.sh
 ./install-all-skills.sh
 ```
 
-This will install all 57 skills sequentially with progress indicators.
+This will install all 50 skills sequentially with progress indicators.
 
 ### Category Installation
 ```bash
@@ -1593,7 +1593,7 @@ This will install all 57 skills sequentially with progress indicators.
 # Install only Logic & Creative skills (10 skills)
 ./install-all-skills.sh --category logic
 
-# Install only Programming skills (12 skills)
+# Install only Programming skills (11 skills)
 ./install-all-skills.sh --category programming
 
 # Install only Design skills (8 skills)
@@ -1655,11 +1655,11 @@ echo 'export OPENAI_API_KEY="your-key-here"' >> ~/.bashrc
 |----------|--------|-------|
 | Foundation (Agent Core) | find-skills, skill-creator, mcp-builder, using-superpowers, subagent-driven-development, agent-tools | 6 |
 | Logic & Creative Stack | brainstorming, copywriting, systematic-debugging, writing-plans, content-strategy, executing-plans, marketing-ideas, copy-editing, social-content, reflection | 10 |
-| Programming & Product | vercel-react-best-practices, vercel-composition-patterns, remotion-best-practices, agent-browser, browser-use, vercel-react-native-skills, supabase-postgres-best-practices, next-best-practices, webapp-testing, test-driven-development, requesting-code-review | 12 |
+| Programming & Product | vercel-react-best-practices, vercel-composition-patterns, remotion-best-practices, agent-browser, browser-use, vercel-react-native-skills, supabase-postgres-best-practices, next-best-practices, webapp-testing, test-driven-development, requesting-code-review | 11 |
 | Design & Visuals | web-design-guidelines, frontend-design, ui-ux-pro-max, canvas-design, tailwind-design-system, content-visualizer, infographic-pro, ai-image-generation | 8 |
 | Marketing & Growth | Larry, audit-website, seo-audit, marketing-psychology, programmatic-seo, product-marketing-context, pricing-strategy, page-cro | 8 |
 | Office Productivity | pdf-pro, pptx, docx, xlsx, url-to-markdown, markdown-to-html, format-pro | 7 |
-| **TOTAL** | | **57** |
+| **TOTAL** | | **50** |
 
 ---
 
@@ -1673,9 +1673,9 @@ echo 'export OPENAI_API_KEY="your-key-here"' >> ~/.bashrc
 
 ### For Developers
 1. Start with **Foundation** (6 skills) - Essential plumbing
-2. Add **Programming & Product** (12 skills) - Build products
+2. Add **Programming & Product** (11 skills) - Build products
 3. Add **Design & Visuals** (8 skills) - Polish UI
-4. Total: 26 essential skills
+4. Total: 25 essential skills
 
 ### For Content Creators
 1. Start with **Foundation** (6 skills) - Essential plumbing
@@ -1714,5 +1714,5 @@ This documentation is provided as-is for the OpenClaw community.
 ---
 
 **Last Updated:** 2026-02-23
-**Total Skills Documented:** 57
+**Total Skills Documented:** 50
 **Installation Script Version:** 1.0.0
